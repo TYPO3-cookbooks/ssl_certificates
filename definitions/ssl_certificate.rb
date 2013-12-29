@@ -33,7 +33,7 @@ define :ssl_certificate do
   directory node[:ssl_certificates][:path] do
     owner 'root'
     group 'ssl-cert'
-    mode '0640'
+    mode 0750
   end
 
   if cert['crt']

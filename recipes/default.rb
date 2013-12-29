@@ -26,5 +26,5 @@ end
 directory node[:ssl_certificates][:path] do
   owner 'root'
   group 'ssl-cert'
-  mode '0750'
+  mode 0750
 end
