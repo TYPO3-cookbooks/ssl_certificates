@@ -3,6 +3,7 @@
 require 'bundler'
 require 'bundler/setup'
 require 'berkshelf/thor'
+require 'thor/scmversion'
 
 begin
   require 'kitchen/thor_tasks'
