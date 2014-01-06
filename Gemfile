@@ -1,6 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'berkshelf'
-gem 'test-kitchen', '= 1.0.0.rc.2'
-gem 'kitchen-vagrant'
-gem 'foodcritic'
+gem "berkshelf",  "~> 2.0"
+gem "chefspec",   "~> 3.0"
+gem "foodcritic", "~> 3.0"
+gem "rake"
+gem "yarjuf"
+
+group :integration do
+  gem 'test-kitchen', '~> 1.1'
+  gem 'kitchen-docker'
+  gem 'kitchen-vagrant'
+end
+
