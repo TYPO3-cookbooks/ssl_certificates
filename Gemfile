@@ -5,6 +5,7 @@ gem "chefspec",   "~> 3.0"
 gem "foodcritic", "~> 3.0"
 gem "rake"
 gem "yarjuf"
+gem "thor-scmversion"
 
 group :integration do
   gem 'test-kitchen', '~> 1.1'
