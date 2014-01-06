@@ -7,6 +7,8 @@
 
 
 
+
+
 #
 # Cookbook Name:: ssl_certificates
 # Recipe:: default
