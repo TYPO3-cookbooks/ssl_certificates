@@ -1,4 +1,6 @@
-#
+# ignore ~FC015
+
+# #
 # Cookbook Name:: ssl_certificates
 # Definition:: ssl_certificate
 #
@@ -23,7 +25,8 @@ define :ssl_certificate do
 
   if Chef::Config[:solo]
     Chef::Log.info "We need chef-solo-search now.."
-    include_recipe "chef-solo-search::default"
+    # depending on chef-solo-search is for Chef Solo only, so we don't really want to list this in our metadata.rb -> ignore FC007
+    include_recipe "chef-solo-search::default" # ignore ~FC007
   end
 
   cert = search(:certificates, "name:#{name}").first
@@ -51,7 +54,8 @@ define :ssl_certificate do
     end
   end
 
-  file "#{node[:ssl_certificates][:path]}/#{name}.ca-bundle" do
+  # I don't know, why foodcritic thinks it's repetitive - they're different in fact
+  file "#{node[:ssl_certificates][:path]}/#{name}.ca-bundle" do # ignore ~FC005
     content cert['ca_bundle']
     owner 'root'
     group 'ssl-cert'
